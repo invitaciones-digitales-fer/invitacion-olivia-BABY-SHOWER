@@ -223,11 +223,7 @@ document.querySelector('.galeria__contenedor')?.classList.remove('hidden');
         console.warn("Error al intentar reproducir:", err);
       });
 
-    // Refuerzo por si no hace loop
-    video.addEventListener("ended", () => {
-      video.currentTime = 0;
-      video.play();
-    });
+   
   }
 
   window.addEventListener("load", actualizarVideo);

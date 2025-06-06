@@ -1,0 +1,959 @@
+/* --------- Variables --------- */
+:root {
+
+    /* ==========FUENTES============ */
+    --font-body: 'Nerko One', sans-serif;
+    --font-title: 'Caveat Brush', cursive;
+    --font-text: 'Caveat Brush', sans-serif;
+    --font-button: 'Delius', sans-serif;
+    --font-gracias: 'Niconne', sans-serif;
+
+    /* ========== COLORES ============= */
+
+    /* Gris cálido suave para textos y detalles */
+    --color-text: #FFFFFF;
+
+    /* Fondo claro pastel: reemplazo del rosa default */
+    --color-primary: #dfc2ca;
+
+    /* Color acento elegante (usado para botones, títulos, íconos clave) */
+    --color-ceremonia: #dba4bb;
+
+    /* Blanco y negro clásicos */
+    --color-white: #ffffff;
+    --color-dark: #1212127f;
+
+    /* Gris neutro para textos secundarios y hover */
+    --color-gris: #D7BFA8;
+
+    /* Azul oscuro solo para links visibles (opcional) */
+    --color-blue: #3a6fa6;
+}
+
+/* --------- Reset --------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-white);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+h4 {
+    font-family: var(--font-title);
+    letter-spacing: 10px;
+    color: #4e4e4e;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 20px 20px 20px;
+    line-height: 1.2;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 192, 203, 0.8), 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+p {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 24px;
+    color: #4f4b44;
+    margin: 0 0 25px;
+}
+
+/* --------- Botones --------- */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: var(--font-text);
+    transition: .3s;
+    text-transform: uppercase;
+    border-radius: 15px;
+}
+
+.button--primary {
+    background: var(--color-ceremonia);
+    color: var(--color-white);
+    font-size: 16px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 255, 0.3);
+}
+
+.button--outline {
+    color: var(--color-white);
+    background-color: var(--color-ceremonia);
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.button--hover:hover {
+    opacity: 0.8;
+    color: var(--color-text);
+    /* o cualquier color que quieras en hover */
+}
+
+.button--info {
+    background-color: var(--color-primary);
+    color: #000;
+    border: 1px solid var(--color-white);
+}
+
+/* ---------------Mensaje de bienvenida */
+#welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 235, 245, 0.8);
+    /* Rosa pastel traslúcido */
+    backdrop-filter: blur(5px);
+    /* 🔮 efecto blur */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.welcome__content {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(87, 120, 170, 0.281);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 90vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#welcome h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2rem;
+    color: #459ea1aa;
+}
+
+#welcome button {
+    background: #ff337790;
+    color: var(--color-text);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.welcome__text {
+    color: #892089a1;
+    font-size: 2.2rem;
+}
+
+#welcome button:hover {
+    background: var(--color-blue);
+}
+
+/* Animación para el overlay de bienvenida */
+#welcome {
+    transition: opacity 1s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --------- Secciones --------- */
+.section {
+    padding: 0px 15px;
+    text-align: center
+}
+
+.fiesta__inner {
+    padding: 0px 30px;
+    margin: 0;
+}
+
+.section__title {
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+    margin-top: 1.5rem;
+}
+
+.section__title--gracias {
+    font-family: var(--font-gracias);
+    font-size: 2.5rem;
+    padding: 0;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.section__ceremonia {
+    padding: 10px 0 40px;
+}
+
+.section__title-rspv {
+    margin: 0 0 25px;
+    text-align: center;
+}
+
+/* Estilos iconos */
+
+.countdown__img {
+    width: 150px;
+    margin: 0px 0 20px;
+}
+
+.frase__img {
+    width: 100px;
+    margin: 0 0 20px;
+}
+
+.icono-img {
+    width: 100px;
+}
+
+.icono-img-primary {
+    width: 90px;
+    margin: 10px 0 20px;
+}
+
+.gift {
+    width: 90px;
+
+}
+
+/* Botón de música */
+
+#music-toggle {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    color: rgb(75, 96, 255);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    background: transparent;
+    border: none;
+    /* Elimina cualquier borde gris que pueda estar presente */
+    box-shadow: none;
+    /* Si hay una sombra gris, la remueve */
+}
+
+#music-toggle img {
+    width: 70px;
+    /* Ajusta el tamaño según lo necesites */
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50px;
+    opacity: 0.8;
+}
+
+#music-toggle:active {
+    transform: scale(1.2) rotate(15deg);
+}
+
+/* Pulso cuando está en play */
+.playing {
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* --------- Scroll reveal --------- */
+.section.hidden {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: .9s
+}
+
+.section.appear {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+/* --------- HERO --------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% center;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0, 4)
+}
+
+.hero__overlay img {
+    width: 350px;
+    position: relative;
+    bottom: 60px;
+    filter: brightness(0.7);
+}
+
+/* Flecha */
+.hero__scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+    transform: translateX(-50%) rotate(45deg);
+    animation: arrow 2s infinite
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -10px) rotate(45deg)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 0) rotate(45deg)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 10px) rotate(45deg)
+    }
+}
+
+
+/* Estilos section frase */
+.frase {
+    padding: 50px 0 50px;
+    background-color: var(--color-primary);
+
+}
+
+.frase__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+
+
+}
+
+.frase__text {
+    text-align: center;
+}
+
+.frase__text p {
+    margin: 0;
+}
+
+/* --------- Countdown --------- */
+#clock {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Aumentamos el espacio entre los bloques */
+    margin-top: 0rem;
+    padding: 40px 0px 0px 0px;
+}
+
+#clock div {
+    padding: 1.2rem;
+    /* Aumentamos el padding para hacer el círculo más grande */
+    border-radius: 50%;
+    /* ¡Esto es clave para el círculo! */
+    width: 60px;
+    /* Ajusta el ancho para que el círculo se vea bien */
+    height: 60px;
+    /* Mismo valor que el ancho para un círculo perfecto */
+    display: flex;
+    /* Usamos flexbox para centrar el contenido dentro del círculo */
+    flex-direction: column;
+    /* Colocamos número y texto uno debajo del otro */
+    justify-content: center;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Centra horizontalmente */
+    border: 1px solid var(--color-dark);
+    /* Añadimos el borde delgado que se ve en la imagen */
+    box-sizing: border-box;
+    /* Asegura que el padding y border no aumenten el tamaño final */
+}
+
+#clock div span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 900;
+    /* Puedes ajustar si lo quieres un poco más grande o pequeño */
+    color: var(--color-ceremonia);
+    /* Asumiendo que 'plate' es un gris claro o blanco */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    /* Espacio entre el número y la etiqueta */
+    letter-spacing: 3px;
+}
+
+#clock div strong {
+    display: block;
+    font-size: 1.7rem;
+    /* Un poco más grande para el número */
+    font-weight: 700;
+    /* Puedes probar 700 o 600, el 700 es muy negrita */
+    color: var(--color-gris);
+    /* El mismo color para los números */
+    line-height: 1;
+    /* Ayuda a que el número no tenga un espacio excesivo arriba/abajo */
+    margin-top: 5px;
+}
+
+/*RSPV*/
+
+.confirmar-asistencia {
+    background-color: var(--color-primary);
+    padding: 40px 0 50px;
+}
+
+.rsvp__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rspv__info {
+    text-align: center;
+}
+
+.rspv__info {
+    margin-bottom: 35px;
+}
+
+.rspv__info p {
+    padding: 0 15px;
+}
+
+.rspv__calendario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dropdown calendario */
+.dropdown__menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+    width: 200px;
+}
+
+.dropdown__menu li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-text);
+    font-size: 15px;
+    color: #333;
+}
+
+.dropdown__menu img {
+    width: 20px;
+    height: 20px
+}
+
+.dropdown__menu a {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.dropdown__menu a:hover {
+    text-decoration: underline
+}
+
+.calendar__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.dropdown__menu li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    padding: 0;
+}
+
+.calendar-button.open {
+    background-color: #545b62;
+    color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.calendar-button {
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.calendar-button::after {
+    content: '▼';
+    font-size: 0.7rem;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.calendar-button.open::after {
+    transform: rotate(180deg);
+}
+
+/* ---------- Cerrar galería clic en fondo ---------- */
+.gallery-modal {
+    cursor: pointer
+}
+
+.gallery-modal__img,
+.gallery-modal__close,
+.gallery-modal__prev,
+.gallery-modal__next {
+    pointer-events: auto
+}
+
+/* ========= GALERÍA ========= */
+.galeria {
+    padding: 20px 20px 40px;
+    text-align: center;
+}
+
+.galeria__title {
+    font-family: var(--font-title);
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--color-dark);
+}
+
+.galeria__text {
+    font-family: var(--font-text);
+    font-size: 25px;
+    margin-bottom: 16px;
+    padding: 0 0 30px;
+}
+
+.galeria__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas */
+    grid-template-rows: repeat(2, auto);
+    /* 2 filas */
+    gap: 10px;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.gallery__item img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* Siempre cuadrado */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.gallery__item img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Modal galería ---------- */
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    cursor: pointer;
+    /* permite cerrar clicando fondo */
+}
+
+.gallery-modal--active {
+    display: flex;
+}
+
+.gallery-modal__img {
+    max-width: 85vw;
+    max-height: 85vh;
+    border-radius: .5rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .4);
+    pointer-events: auto;
+    /* la imagen sigue clicable */
+}
+
+.gallery-modal__close,
+.gallery-modal__prev,
+.gallery-modal__next {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: auto;
+    /* activas aun con cursor fondo */
+}
+
+.gallery-modal__close {
+    top: 1rem;
+    right: 1rem;
+}
+
+.gallery-modal__prev {
+    left: 1rem;
+}
+
+.gallery-modal__next {
+    right: 1rem;
+}
+
+/* pequeña animación de zoom al abrir (respeta reduce-motion) */
+@media (prefers-reduced-motion: no-preference) {
+    .gallery-modal__img {
+        animation: zoomIn .4s ease;
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(.85);
+            opacity: .3;
+        }
+    }
+}
+
+
+/* <!-- ========= REGALOS ========= --> */
+
+.cbu {
+    background-color: var(--color-primary);
+    padding: 30px 0;
+
+}
+
+.cbu__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cbu__text {
+    margin: 0 0 5px;
+    text-align: center;
+}
+
+#btnGift {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: var(--color-ceremonia);
+    border: 1px solid var(--color-blue);
+    color: var(--color-white);
+    font-size: 16px;
+    font-family: var(--font-text);
+    border-radius: 15px;
+}
+
+.diary {
+    width: 40px;
+    margin: 20px;
+}
+
+
+/* --------- Modal --------- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgb(214, 152, 117, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    padding: 6px;
+}
+
+.modal a {
+    color: var(--color-ceremonia);
+}
+
+
+.modal__dialog {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 80%;
+    position: relative;
+    font-size: 17px;
+    text-align: center
+}
+
+.title__modal {
+    color: var(--color-ceremonia);
+    text-align: center;
+    font-family: var(--font-text);
+    font-size: 25px;
+
+
+}
+
+.modal__dialog p {
+    text-align: center;
+    font-size: 1.3rem;
+
+}
+
+.modal__dialog .modal__close {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 1.6rem;
+    cursor: pointer
+}
+
+.modal__dialog li {
+    font-size: 17px;
+    font-family: var(--font-text);
+    list-style: none;
+    margin-bottom: 17px;
+}
+
+.banco li {
+    margin-bottom: 0;
+}
+
+.section__gracias {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 30px 20px;
+  color: #fff;
+  background: none;
+}
+
+.gracias__video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3; /* o ajustalo a gusto */
+}
+
+.gracias__glitter-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+
+/* =================================MEDIA QUERIES=================================================================== */
+@media (min-width: 375px) {
+    #clock div {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media (min-width: 425px) {
+    #clock div {
+        width: 88px;
+        height: 88px;
+    }
+
+    #clock div span {
+        font-size: 1rem;
+
+    }
+}
+
+@media (min-width: 768px) {
+
+  
+    .welcome__content {
+        width: 60%;
+    }
+
+    .hero__overlay img {
+        width: 450px;
+    }
+
+    .galeria__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .galeria__imagen {
+        width: 100%;
+        /* ocupa la celda */
+        height: auto;
+        /* ajusta si querés mantener proporción */
+        aspect-ratio: 1/1;
+        /* mantiene forma cuadrada */
+    }
+
+    #clock div {
+        width: 102px;
+        height: 102px;
+    }
+
+    .section__ceremonia {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .fiesta__inner {
+        padding: 0;
+    }
+
+    .modal__dialog {
+        width: 50%;
+    }
+
+}
+
+/* <-- Cierra el bloque @media (min-width: 768px) */
+
+
+
+@media (min-width: 1024px) {
+    .welcome__content {
+        width: 40%;
+    }
+
+    #clock div {
+        width: 130px;
+        height: 130px;
+    }
+
+    #clock div span {
+        font-size: 1.1rem;
+
+    }
+
+    #clock div strong {
+        font-size: 1.7rem;
+    }
+
+    .modal__dialog {
+        width: 60%;
+
+    }
+
+    .title__modal {
+        font-size: 35px;
+    }
+
+    .modal__dialog li {
+        font-size: 1.7rem;
+    }
+
+    .fiesta__inner {
+        padding: 15px;
+    }
+
+    .hero__overlay img {
+        width: 550px;
+
+    }
+
+}
+
+@media (min-width: 1440px) {
+    .welcome__content {
+        width: 30%;
+    }
+
+    #clock div {
+        width: 110px;
+        height: 110px;
+    }
+
+    #clock div span {
+        font-size: 1rem;
+
+    }
+
+    #clock div strong {
+        font-size: 2rem;
+    }
+
+    .title__modal {
+        font-size: 35px;
+    }
+
+    .modal__dialog li {
+        font-size: 2rem;
+    }
+
+    .fiesta__inner {
+        padding: 30px;
+    }
+
+    .hero__overlay img {
+        width: 650px;
+    }
+}

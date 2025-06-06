@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Esperando a Olivia - Baby Shower</title>
+
+    <!-- Google---Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations-exageradas.css">
+
+    <!-- Open Graph / WhatsApp preview -->
+    <meta property="og:title" content="¡Bienvenida Olvia! 💍" />
+    <meta property="og:description"
+        content="Te invitamos a celebrar la llegada de Olivia. Confirmá tu asistencia desde esta invitación digital." />
+    <meta property="og:image"
+        content="https://github.com/invitaciones-digitales-fer/assets/img/og-olivia-BABY-SHOWER.jpg" />
+    <meta property="og:url" content="https://github.com/invitaciones-digitales-fer/invitacion-olivia-BABY-SHOWER/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon (opcional, lo generamos luego) -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <!-- ========= Overlay bienvenida ========= -->
+    <div id="welcome" class="welcome__overlay">
+        <div class="welcome__content">
+            <h1>Bienvenido</h1>
+            <p class="welcome__text">Estás invitado al baby shower de Olivia</p>
+            <button id="enter-button" class="button button--outline button--hover">Entrar</button>
+        </div>
+    </div>
+
+    <!-- ========= Música de fondo ========= -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/celine-dion-miracle.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle" class="music__icon-reproductor" aria-label="Música">
+        <img id="music-icon" src="assets/icons/icono-musica_stop.png" alt="Play">
+    </button>
+
+    <!-- ========= HERO ========= -->
+    <header class="hero">
+        <img src="assets/images/hero.webp" alt="olivia portada" class="hero__img" loading="lazy" decoding="async">
+        <div class="hero__overlay">
+            <img src="assets/images/logo-olivia.png" alt="Logo Camila y Tomás" class="hero__logo fade-zoom">
+        </div>
+        <a href="#frase" class="hero__scroll-down" aria-label="Bajar"></a>
+    </header>
+
+    <!-- ========= FRASE ========= -->
+    <section class="frase fade-up" id="frase">
+        <div class="frase__container">
+            <img src="assets/icons/heart-internet_26694.png" alt="icon icono-corazon" class="frase__img fade-zoom"
+                loading="lazy">
+            <div class="frase__text fade-down">
+                <h4>La dulce espera</h4>
+                <p>"Cada patadita nos recuerda que falta menos para conocerte."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= COUNTDOWN ========= -->
+    <section id="countdown" class="section fade-up">
+        <div id="clock" class="countdown__clock"></div>
+        <div class="frase__text">
+            <h4 class="blur-in">Ya falta muy poquito</h4>
+        </div>
+    </section>
+
+    <!-- ========= CEREMONIA & FIESTA ========= -->
+    <section id="fiesta" class="section section__ceremonia fade-up">
+        <div class="fiesta__inner fade-down">
+            <img src="assets/icons/wedding-rings.png" alt="icono-boda" class="countdown__img  fade-zoom">
+            <p>
+                Sábado 20 de Septiembre – 17:00 hs<br>
+                Salón Dulce Espera | Villa Devoto
+            </p>
+            <a class="button button--primary button--hover pause-music" target="_blank"
+                href="https://maps.app.goo.gl/kdgQZJ7jHJBeDgxV6">Cómo
+                llegar</a>
+        </div>
+    </section>
+
+    <!-- ========= RSVP ========= -->
+    <section id="rsvp" class="confirmar-asistencia fade-up">
+        <div class="rsvp__container">
+            <h4 class="section__title section__title-rspv fade-zoom">Confirmá tu Asistencia</h4>
+            <div class="rspv__info fade-down">
+                <p>Nos encantaría compartir este momento con vos. <br>¡Confirmá tu asistencia!</p>
+                <a class="button button--primary button--hover pause-music" target="_blank"
+                    href="https://forms.gle/rXmm24d7sacwsgb39">Confirmar asistencia</a>
+            </div>
+            <img src="assets/icons/calendar.png" alt="icono-calendar" class="icono-img-primary calendar  fade-zoom">
+            <div class="rspv__calendario fade-down">
+                <p>¡Agendá la fecha en tu calendario!</p>
+                <div class="rsvp__dropdown">
+                    <button id="btnCalendar" class="button button--primary calendar-button pause-music">Agendar
+                        evento</button>
+                    <ul id="calendarMenu" class="dropdown__menu">
+                        <li>
+                            <a href="https://calendar.google.com/calendar/render?...">
+                                <img src="assets/icons/google-calendar-icon.svg" alt="" class="calendar__icon">
+                                Google Calendar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://outlook.office.com/calendar/...">
+                                <img src="assets/icons/microsoft-outlook-icon.svg" alt="" class="calendar__icon">
+                                Outlook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://outlook.live.com/calendar/...">
+                                <img src="assets/icons/office-365-icon.svg" alt="" class="calendar__icon">
+                                Microsoft 365
+                            </a>
+                        </li>
+                        <li>
+                            <a href="assets/ics/camila-tomas.ics">
+                                <img src="assets/icons/Apple_logo_black.svg" alt="" class="calendar__icon">
+                                Apple
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://calendar.yahoo.com/?...">
+                                <img src="assets/icons/yahoo-icon.svg" alt="" class="calendar__icon">
+                                Yahoo
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= GALERÍA ========= -->
+    <section class="galeria section fade-up">
+        <div class="galeria__contenedor hidden">
+            <h4 class="galeria__title  fade-zoom"> La dulce espera en imágenes 💕 <br><img src="assets/icons/diary.png"
+                    alt="" class="diary"></h4>
+            <p class="galeria__text fade-down">Un instante mágico para celebrar la llegada de un amor infinito.</p>
+            <div class="galeria__grid">
+                <button class="gallery__item" type="button"><img src="assets/images/1.jpg" alt="Foto 1" loading="lazy"
+                        decoding="async"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/2.jpg" alt="Foto 2" loading="lazy"
+                        decoding="async"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/3.jpg" alt="Foto 3" loading="lazy"
+                        decoding="async"></button>
+                <button class="gallery__item" type="button"><img src="assets/images/4.jpg" alt="Foto 4" loading="lazy"
+                        decoding="async"></button>
+            </div>
+            <!-- Modal de galería -->
+            <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog">
+                <button class="gallery-modal__close" aria-label="Cerrar">&times;</button>
+                <img class="gallery-modal__img" alt="">
+                <button class="gallery-modal__prev" aria-label="Anterior">&#10094;</button>
+                <button class="gallery-modal__next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= REGALOS ========= -->
+    <section id="regalos" class="cbu fade-up">
+        <div class="cbu__container">
+            <img src="assets/icons/present.png" alt="icono-regalo" class="icono-img  fade-zoom gift">
+            <div class="cbu__text fade-down">
+                <p>
+                    Tu cariño es nuestro mayor regalo.
+                    <br>
+                    Si deseás colaborar, aquí encontrarás nuestras opciones.
+                </p>
+            </div>
+            <button id="btnGift" class="button--hover button">Ver más</button>
+        </div>
+    </section>
+
+    <!-- ========= MODAL REGALO ========= -->
+    <div id="modalRegalo" class="modal modal--regalo">
+        <div class="modal__dialog banco">
+            <span class="modal__close button--hover">&times;</span>
+            <span class="title__modal">Datos Bancarios</span>
+            <ul>
+                <li>Nombre del Titular: Nombre Apellido</li>
+                <li>CBU: 12345623561</li>
+                <li>Alias:</li>
+                <li>DNI: 32200552</li>
+                <li>Banco Galicia</li>
+            </ul>
+            <span class="title__modal">Lista de Regalos</span>
+            <ul>
+                <li><a href="https://www.pampers.com.ar/baby-shower/lista-de-regalos" target="_blank"
+                        class="pause-music">Falabella Novios</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========= GRACIAS ========= -->
+    <section id="gracias" class="section__gracias fade-up">
+  <video
+    id="videoFondo"
+    class="gracias__video-fondo"
+    autoplay
+    loop
+    muted
+    playsinline
+  >
+    <!-- Sin <source>, lo agregamos con JS -->
+    Tu navegador no soporta video.
+  </video>
+
+  <div class="gracias__glitter-container">
+    <p class="section__title section__title--gracias fade-zoom">
+      <img src="assets/icons/mother.png" alt="icono madre e hijo" width="120px"><br>
+      Gracias por ser parte de este capítulo tan especial de nuestras vidas.<br>
+      Nos sentimos profundamente agradecidos por tu compañía, amor y apoyo.<br>
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- ========= Scripts ========= -->
+
+
+    <script src="assets/js/scroll-animations.js"></script>
+
+    <script src="assets/js/script.js" defer></script>
+
+
+
+
+
+</body>
+
+</html>

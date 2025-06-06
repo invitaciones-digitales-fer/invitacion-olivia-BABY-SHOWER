@@ -57,6 +57,11 @@ Original codebase hosted on [GitHub](https://github.com/invitaciones-digitales-f
 
 ![Preview](assets/images/hero.webp)
 
+## 🎬 Preview
+
+![Olivia Baby Shower Preview](assets/preview/olivia-preview.gif)
+
+
 ---
 
 ## 🧑‍💻 Author

@@ -111,22 +111,20 @@ p {
     height: 100%;
     background-color: rgba(255, 235, 245, 0.8);
     /* Rosa pastel traslúcido */
-    backdrop-filter: blur(5px);
     /* 🔮 efecto blur */
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .welcome__content {
     text-align: center;
     padding: 2rem;
-    background: rgba(87, 120, 170, 0.281);
-    backdrop-filter: blur(8px);
+    background: rgba(87, 120, 170, 0.388);
+    backdrop-filter: blur(5px);
     border-radius: 1rem;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     max-width: 90vw;
     width: 100%;
     box-sizing: border-box;
@@ -136,7 +134,7 @@ p {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     letter-spacing: 0.2rem;
-    color: #459ea1aa;
+    color: #2f8083d8;
 }
 
 #welcome button {
@@ -154,6 +152,7 @@ p {
 .welcome__text {
     color: #892089a1;
     font-size: 2.2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #welcome button:hover {

@@ -10,23 +10,17 @@
 
     /* ========== COLORES ============= */
 
-    /* Gris cálido suave para textos y detalles */
     --color-text: #FFFFFF;
 
-    /* Fondo claro pastel: reemplazo del rosa default */
     --color-primary: #dfc2ca;
 
-    /* Color acento elegante (usado para botones, títulos, íconos clave) */
     --color-ceremonia: #dba4bb;
 
-    /* Blanco y negro clásicos */
     --color-white: #ffffff;
     --color-dark: #1212127f;
 
-    /* Gris neutro para textos secundarios y hover */
     --color-gris: #D7BFA8;
 
-    /* Azul oscuro solo para links visibles (opcional) */
     --color-blue: #3a6fa6;
 }
 

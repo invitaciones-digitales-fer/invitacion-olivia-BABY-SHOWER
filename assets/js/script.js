@@ -192,49 +192,7 @@ if (btnCalendar && calendarMenu) {
 
 document.querySelector('.galeria__contenedor')?.classList.remove('hidden');
  
- function actualizarVideo() {
-  const video = document.getElementById("videoFondo");
 
-  if (!video) return;
-
-  const ancho = window.innerWidth;
-
-  const source = document.createElement("source");
-  source.type = "video/mp4";
-
-  if (ancho < 768) {
-    source.src = "assets/video/gracias-fondo-mobile-2.mp4";
-  } else {
-    source.src = "assets/video/gracias-fondo_1.mp4";
-  }
-
-  video.innerHTML = ""; // Limpia cualquier fuente anterior
-  video.appendChild(source);
-
-  video.load();
-
-  // Controla la promesa para evitar bloqueos
-  const playPromise = video.play();
-
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => console.log("Video reproduciéndose correctamente"))
-      .catch(err => {
-        console.warn("Error al intentar reproducir:", err);
-        video.muted = true; // Algunas veces silenciar ayuda
-        video.play();
-      });
-  }
-
-  // Asegura que el video se mantenga en loop sin pausas
-  video.addEventListener("ended", () => {
-    video.currentTime = 0;
-    video.play();
-  });
-}
-
-window.addEventListener("load", actualizarVideo);
-window.addEventListener("resize", actualizarVideo);
 
 
 
